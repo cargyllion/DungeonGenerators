@@ -68,7 +68,7 @@ public class generateRoguelike extends generator{
     //Check the room boundaries. We don't want to override any existing level data.
 		for(y=room.miny;y<room.maxy;y++) {
 			for(x=room.minx;x<room.maxx;x++) {
-				if(floor.getTile(x, y)!=Tiles.stoneWall.tileID) {
+				if(floor.getTile(x, y)!=tiles.stoneWall.tileID) {
 					return false;
 				}
 			}
@@ -100,10 +100,10 @@ public class generateRoguelike extends generator{
 			for(int x=room.minx;x<=room.maxx;x++) {
 				for(int y=room.miny;y<=room.maxy;y++) {
 					if(x==room.minx||x==room.maxx||y==room.miny||y==room.maxy) {
-						floor.setTile(x, y, Tiles.roomWall.tileID);
+						floor.setTile(x, y, tiles.roomWall.tileID);
 						
 					}else {
-						floor.setTile(x, y, Tiles.roomFloor.tileID);
+						floor.setTile(x, y, tiles.roomFloor.tileID);
 					}
 				}
 			}
@@ -116,13 +116,13 @@ public class generateRoguelike extends generator{
 		int newtile, oldtile;
 		oldtile = floor.getTile(x, y);
 		newtile=oldtile;
-		if(oldtile==Tiles.stoneFloor.tileID) {
+		if(oldtile==tiles.stoneFloor.tileID) {
       //There's no reason to continue here.
 			return;
-		}else if(oldtile==Tiles.stoneWall.tileID) {
-      newtile = Tiles.stoneFloor.tileID;
-		} else if(oldtile==Tiles.door.tileID||oldtile==Tiles.roomWall.tileID) {
-			newtile=Tiles.door.tileID;
+		}else if(oldtile==tiles.stoneWall.tileID) {
+      newtile = tiles.stoneFloor.tileID;
+		} else if(oldtile==tiles.door.tileID||oldtile==tiles.roomWall.tileID) {
+			newtile=tiles.door.tileID;
 		}
 		floor.setTile(x, y, newtile);
 		
@@ -275,8 +275,8 @@ public class generateRoguelike extends generator{
 				Room rm = rooms.get(room);
 				x=rand.rand_range(rm.minx+1, rm.maxx-1);
 				y=rand.rand_range(rm.miny+1, rm.maxy-1);
-				if(floor.getTile(x, y)==Tiles.roomFloor.tileID) {
-					floor.setTile(x,y,Tiles.stairsDown.tileID);
+				if(floor.getTile(x, y)==tiles.roomFloor.tileID) {
+					floor.setTile(x,y,tiles.stairsDown.tileID);
 					break;
 				}
 			}
@@ -285,8 +285,8 @@ public class generateRoguelike extends generator{
 				Room rm = rooms.get(room);
 				x=rand.rand_range(rm.minx+1, rm.maxx-1);
 				y=rand.rand_range(rm.miny+1, rm.maxy-1);
-				if(floor.getTile(x, y)==Tiles.roomFloor.tileID) {
-					floor.setTile(x,y,Tiles.stairsUp.tileID);
+				if(floor.getTile(x, y)==tiles.roomFloor.tileID) {
+					floor.setTile(x,y,tiles.stairsUp.tileID);
 					break;
 				}
 			}
