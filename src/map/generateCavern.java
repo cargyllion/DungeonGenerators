@@ -29,6 +29,7 @@ public class generateCavern extends generator{
 				tile=Tiles.stoneFloor.tileID;
 			} else {
 				while(true) {
+					//Pick a random drunk starting location.
 					pos.x = (byte) rand.rand_range(3, floor.width);
 					pos.y = (byte) rand.rand_range(3, floor.height);
 					
