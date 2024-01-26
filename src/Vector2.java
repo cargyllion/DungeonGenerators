@@ -15,12 +15,26 @@ public class Vector2 {
 		this.y=in[1];
 	}
 	
+	/**
+	*There's an instance in GenerateRoguelike where we need to condense multiple Vectors into one variable. This is the most streamlined approach I could think of.
+	*/
+	public Vector2(Vector2[] in) {
+		for(int i=0;i<in.length;i++) {
+			x+=in[i].x;
+			y+=in[i].y;
+		}
+	}
+	/**
+	*Offsets the current Vector2 by the position of Vector2 in.
+	*/
 	public Vector2 add(Vector2 in) {
 		this.x+=in.x;
 		this.y+=in.y;
 		return this;
 	}
-	
+	/**
+	*For cases when we're using a Vector2 as a rotation variale.
+	*/
 	public void turnleft() {
         byte a;
         byte b;
@@ -43,7 +57,9 @@ public class Vector2 {
         this.x = a;
         this.y = b;
     }
-    
+    /**
+    *For cases when we're using a Vector2 as a rotation variale.
+    */
     public void turnRight() {
         byte a;
         byte b;
@@ -65,5 +81,10 @@ public class Vector2 {
         }
         this.x = a;
         this.y = b;
+    }
+
+    public int[] toArr() {
+    	int[] arr = {x,y};
+    	return arr;
     }
 }
