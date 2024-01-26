@@ -9,6 +9,7 @@
 
 <h2>Roguelike</h2>
 <p>Your generic series of rooms interconnected with winding corridors.</p>
+<img src="/examples/rogues.png">
 
 <b>Issues:</b> Dungeon generation will inevitably fail on non-standard maps that exceed 70 tiles in either axis. This should be fixed by scaling the length check from 100 tiles in findPath().
 
@@ -16,10 +17,12 @@
 
 <h2>Drunken Caves</h2>
 <p>An implementation of Leo Grady's <a href="https://en.wikipedia.org/wiki/Random_walker_algorithm">Random Walker Algorithm</a>.</p>
+<img src="/examples/caves.png">
 
 <b>Authors:</b> Jeff Lait, Brianna Stafford
 
 <h2>Maze Generator</h2>
+<img src="/examples/mazes.png">
 <p>A simple maze generator.</p>
 
 <b>Todo:</b> In POWDER, the narrow corridors these floors can generate with caused issues with navigation for larger NPCs like the Cretan Minotaur. Change the cutout step so that it punches out the entire wall of the cell, instead of individual tiles.
@@ -27,6 +30,7 @@
 <b>Authors:</b> Jeff Lait, Brianna Stafford
 
 <h2>Qix</h2>
+<img src="/examples/qix.png">
 <p>Generates a dungeon modeled after a Qix playfield.</p>
 
 <b>Authors:</b> Jeff Lait, Brianna Stafford
